@@ -31,7 +31,7 @@ const noBtnRect = noBtn.getBoundingClientRect();
 yesBtn.addEventListener('click', () => {
     btnGroup.style.display = 'none';
     question.innerHTML = 'Love you <3';
-    imageChange.src = 'images/yes.gif';
+    imageChange.src = 'assets/yes.gif';
     imageChange.style.width = '200px';
     btnGroup.style.display = 'hidden';
 
