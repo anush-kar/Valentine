@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div id="gallery-page">
+        <div id="gallery-text">
+            <div id="gallery-title">Gallery</div>
+            <div id="poem">
+                love is more thicker than forget<br>
+                more thinner than recall<br>
+                more seldom than a wave is wet<br>
+                more frequent than to fail<br><br>
+
+                it is most mad and moonly<br>
+                and less it shall unbe<br>
+                than all the sea which only<br>
+                is deeper than the sea<br><br>
+
+                love is less always than to win<br>
+                less never than alive<br>
+                less bigger than the least begin<br>
+                less littler than forgive<br><br>
+
+                it is most sane and sunly<br>
+                and more it cannot die<br>
+                than all the sky which only<br>
+                is higher than the sky<br>
+
+            </div>
+                <div class="button" id="proceed-btn">
+                    <a href="#question-page">
+                        <div class="button-text">Proceed</div>
+                    </a>
+                </div>
+        </div>
+        <div id="gallery-container">
+            <div class="scroller" data-direction="right" data-speed="slow">
+                <div class="scroller__inner">
+                    <div class="image-container">
+                        <img src="images\IMG_0097.jpg" alt="" />
+                    </div>
+                    <div class="image-container">
+                        <img src="images\IMG_0123.jpg" alt="" />
+                    </div>
+                    <div class="image-container">
+                        <img src="images\IMG_0243.jpg" alt="" />
+                    </div>
+                    <div class="image-container">
+                        <img src="images\IMG_0466.jpg" alt="" />
+                    </div>
+                    <div class="image-container">
+                        <img src="images\IMG_0825.jpg" alt="" />
+                    </div>
+                    <div class="image-container">
+                        <img src="images\IMG_0885.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+            <div class="scroller" data-direction="left" data-speed="slow">
+                <div class="scroller__inner">
+                    <div class="image-container">
+                        <img src="images\IMG_0919.jpg" alt="" />
+                    </div>
+                    <div class="image-container">
+                        <img src="images\IMG_0932.jpg" alt="" />
+                    </div>
+                    <div class="image-container">
+                        <img src="images\IMG_0939.jpg" alt="" />
+                    </div>
+                    <div class="image-container">
+                        <img src="images\IMG_6887.jpg" alt="" />
+                    </div>
+                    <div class="image-container">
+                        <img src="images\IMG_7319.jpg" alt="" />
+                    </div>
+                    <div class="image-container">
+                        <img src="images\IMG_7360.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+            <div class="scroller" data-direction="right" data-speed="slow">
+                <div class="scroller__inner">
+                    <div class="image-container">
+                        <img src="images\IMG_7422.jpg" alt="" />
+                    </div>
+                    <div class="image-container">
+                        <img src="images\IMG_7483.jpg" alt="" />
+                    </div>
+                    <div class="image-container">
+                        <img src="images\IMG_7531.jpg" alt="" />
+                    </div>
+                    <div class="image-container">
+                        <img src="images\IMG_7596.jpg" alt="" />
+                    </div>
+                    <div class="image-container">
+                        <img src="images\IMG_8636.jpg" alt="" />
+                    </div>
+                    <div class="image-container">
+                        <img src="images\IMG_8652.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+            <div class="scroller" data-direction="left" data-speed="slow">
+                <div class="scroller__inner">
+                    <div class="image-container">
+                        <img src="images\IMG_8717.jpg" alt="" />
+                    </div>
+                    <div class="image-container">
+                        <img src="images\IMG_9214.jpg" alt="" />
+                    </div>
+                    <div class="image-container">
+                        <img src="images\n1.jpg" alt="" />
+                    </div>
+                    <div class="image-container">
+                        <img src="images\n2.jpg" alt="" />
+                    </div>
+                    <div class="image-container">
+                        <img src="images\n3.jpg" alt="" />
+                    </div>
+                    <div class="image-container">
+                        <img src="images\n4.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="question-page">
+        <div id="question">
+            <div id="image-container">
+                <img src="bear.gif" alt="" />
+            </div>
+            <div id="question-text">Will you be my Valentine?</div>
+            <div id="btn-group">
+                <div class="button" id="yes-btn">
+                    <div class="button-text">Yes</div>
+                </div>
+                <div class="button" id="no-btn">
+                    <div class="button-text">No</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const scrollers = document.querySelectorAll(".scroller");
+        //condition for reduced motion
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            addAnimation();
+        }
+
+        function addAnimation() {
+            scrollers.forEach((scroller) => {
+                // add data-animated="true" to every `.scroller` on the page
+                scroller.setAttribute("data-animated", true);
+
+                // Make an array from the elements within `.scroller-inner`
+                const scrollerInner = scroller.querySelector(".scroller__inner");
+                const scrollerContent = Array.from(scrollerInner.children);
+
+                // For each item in the array, clone it
+                // add aria-hidden to it
+                // add it into the `.scroller-inner`
+                scrollerContent.forEach((item) => {
+                    const duplicatedItem = item.cloneNode(true);
+                    duplicatedItem.setAttribute("aria-hidden", true);
+                    scrollerInner.appendChild(duplicatedItem);
+                });
+            });
+        }
+
+        const questionPage = document.querySelector('#question-page');
+        const wrapper = document.querySelector('#question');
+        const imageChange = document.querySelector('#image-container img');
+        const btnGroup = document.querySelector('#btn-group');
+        const question = document.querySelector('#question-text');
+        const yesBtn = document.querySelector('#yes-btn.button');
+        const noBtn = document.querySelector('#no-btn.button');
+        const wrapperRect = wrapper.getBoundingClientRect();
+        const noBtnRect = noBtn.getBoundingClientRect();
+        yesBtn.addEventListener('click', () => {
+            btnGroup.style.display = 'none';
+            question.innerHTML = 'Love you <3';
+            imageChange.src = 'images/yes.gif';
+            imageChange.style.width = '200px';
+            btnGroup.style.display = 'hidden';
+
+        });
+        noBtn.addEventListener('mouseover', () => {
+            const i = Math.floor(Math.random() * (wrapperRect.width - noBtnRect.width)) + 1;
+            const j = Math.floor(Math.random() * (wrapperRect.height - noBtnRect.height)) + 1;
+            noBtn.style.position = 'relative';
+            noBtn.style.left = i + 'px';
+            noBtn.style.top = j + 'px';
+        });
+    </script>
+</body>
+
+</html>
