@@ -1,3 +1,10 @@
+window.onload = function () {
+    if (sessionStorage.getItem("authenticated") !== "true") {
+        alert("Unauthorized access! Redirecting to login page.");
+        window.location.href = "login.html";
+    }
+};
+
 const scrollers = document.querySelectorAll(".scroller");
 
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {

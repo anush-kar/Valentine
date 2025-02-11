@@ -7,6 +7,37 @@ body {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+#first-page{
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url('assets/flower-background.jpg') no-repeat;
+    background-size: 100vw 100vh;
+    background-position: center;
+}
+#text-box{
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+}
+#text-box #title{
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+#text-box #description{
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
 #question-page {
   display: flex;
   justify-content: center;
