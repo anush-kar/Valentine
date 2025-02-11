@@ -30,9 +30,9 @@ const wrapperRect = wrapper.getBoundingClientRect();
 const noBtnRect = noBtn.getBoundingClientRect();
 yesBtn.addEventListener('click', () => {
     btnGroup.style.display = 'none';
-    question.innerHTML = 'Love you <3';
+    question.innerHTML = 'Love you ♡';
     imageChange.src = 'assets/yes.gif';
-    imageChange.style.width = '200px';
+    imageChange.style.width = '300px';
     btnGroup.style.display = 'hidden';
 
 });

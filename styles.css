@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 #question-page {
   display: flex;
@@ -14,8 +14,8 @@ body {
   min-height: 100dvh;
 }
 #question-text {
-  font-size: 1.5rem;
-  font-style: normal;
+  font-family: "Dancing Script";
+  font-size: 2.5rem;
   font-weight: 400;
   text-align: center;
   margin: 3rem 0 1rem 0;
@@ -61,10 +61,10 @@ body {
   transform: scale(1.15);
   transition-duration: 500ms;
 }
-#proceed-btn{
-  width: 50%;
+#proceed-btn {
+  width: 65%;
 }
-#proceed-btn:hover{
+#proceed-btn:hover {
   cursor: pointer;
   transform: scale(1.15);
   transition-duration: 500ms;
@@ -79,23 +79,24 @@ body {
 }
 #gallery-text {
   min-width: 30vw;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 #gallery-title {
   font-size: 1.5rem;
-  font-style: normal;
   font-weight: 600;
-  
-  margin: 1rem 0 1rem 0;
+  padding-bottom: 1rem;
 }
 #gallery-title {
   margin: 0;
+  font-weight: 700;
 }
 #poem {
-  font-family: "Times New Roman", Times, serif;
-  margin: 1rem;
+  font-weight: 200;
+  margin-bottom: 1rem;
 }
 #gallery-container {
   display: flex;
